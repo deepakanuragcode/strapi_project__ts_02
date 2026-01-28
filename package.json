@@ -18,6 +18,7 @@
   "dependencies": {
     "@strapi/plugin-cloud": "5.33.4",
     "@strapi/plugin-users-permissions": "5.33.4",
+    "@strapi/provider-email-mailgun": "^5.33.4",
     "@strapi/provider-email-nodemailer": "^5.33.4",
     "@strapi/strapi": "5.33.4",
     "better-sqlite3": "12.4.1",
@@ -26,12 +27,15 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-provider-email-resend": "^1.0.4",
+    "strapi-provider-email-resend-strapi": "^1.0.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "open": "^11.0.0",
     "typescript": "^5"
   },
   "engines": {
