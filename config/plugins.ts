@@ -61,24 +61,24 @@
 //   },
 // });
 
-export default ({ env }) => ({
-  email: {
-    config: {
-      provider: "mailgun",
-      providerOptions: {
-        key: env("MAILGUN_API_KEY"),
-        domain: env("MAILGUN_DOMAIN"),
-        // Fix: Use the variable from .env, if it's missing, default to EU since that's your region
-        url: env("MAILGUN_URL", "https://api.mailgun.net"),
-      },
-      settings: {
-        // Fix: Use the variables from .env instead of hardcoding
-        defaultFrom: env("MAILGUN_DEFAULT_FROM"),
-        defaultReplyTo: env("MAILGUN_DEFAULT_REPLY_TO"),
-      },
-    },
-  },
-});
+// export default ({ env }) => ({
+//   email: {
+//     config: {
+//       provider: "mailgun",
+//       providerOptions: {
+//         key: env("MAILGUN_API_KEY"),
+//         domain: env("MAILGUN_DOMAIN"),
+//         // Fix: Use the variable from .env, if it's missing, default to EU since that's your region
+//         url: env("MAILGUN_URL", "https://api.mailgun.net"),
+//       },
+//       settings: {
+//         // Fix: Use the variables from .env instead of hardcoding
+//         defaultFrom: env("MAILGUN_DEFAULT_FROM"),
+//         defaultReplyTo: env("MAILGUN_DEFAULT_REPLY_TO"),
+//       },
+//     },
+//   },
+// });
 
 // module.exports = ({ env }) => ({
 //   email: {
@@ -113,3 +113,18 @@ export default ({ env }) => ({
 //     },
 //   },
 // });
+
+export default ({ env }) => ({
+  email: {
+    config: {
+      provider: "sendgrid",
+      providerOptions: {
+        apiKey: env("SENDGRID_API_KEY"),
+      },
+      settings: {
+        defaultFrom: env("SENDGRID_DEFAULT_FROM"),
+        defaultReplyTo: env("SENDGRID_DEFAULT_REPLY_TO"),
+      },
+    },
+  },
+});
