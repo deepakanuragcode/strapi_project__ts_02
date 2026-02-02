@@ -24,22 +24,22 @@
 //   // ...
 // });
 
-// export default ({ env }) => ({
-//   provider: "nodemailer",
-//   providerOptions: {
-//     host: env("SMTP_HOST"),
-//     port: env.int("SMTP_PORT", 587),
-//     secure: true,
-//     auth: {
-//       user: env("SMTP_USERNAME"),
-//       pass: env("SMTP_PASSWORD"),
-//     },
-//   },
-//   settings: {
-//     defaultFrom: env("SMTP_FROM"),
-//     defaultReplyTo: env("SMTP_REPLY_TO"),
-//   },
-// });
+export default ({ env }) => ({
+  provider: "nodemailer",
+  providerOptions: {
+    host: env("SMTP_HOST"),
+    port: env.int("SMTP_PORT", 587),
+    secure: true,
+    auth: {
+      user: env("SMTP_USERNAME"),
+      pass: env("SMTP_PASSWORD"),
+    },
+  },
+  settings: {
+    defaultFrom: env("SMTP_FROM"),
+    defaultReplyTo: env("SMTP_REPLY_TO"),
+  },
+});
 
 // module.exports = ({ env }) => ({
 //   email: {
@@ -114,17 +114,17 @@
 //   },
 // });
 
-export default ({ env }) => ({
-  email: {
-    config: {
-      provider: "sendgrid",
-      providerOptions: {
-        apiKey: env("SENDGRID_API_KEY"),
-      },
-      settings: {
-        defaultFrom: env("SENDGRID_DEFAULT_FROM"),
-        defaultReplyTo: env("SENDGRID_DEFAULT_REPLY_TO"),
-      },
-    },
-  },
-});
+// export default ({ env }) => ({
+//   email: {
+//     config: {
+//       provider: "sendgrid",
+//       providerOptions: {
+//         apiKey: env("SENDGRID_API_KEY"),
+//       },
+//       settings: {
+//         defaultFrom: env("SENDGRID_DEFAULT_FROM"),
+//         defaultReplyTo: env("SENDGRID_DEFAULT_REPLY_TO"),
+//       },
+//     },
+//   },
+// });
