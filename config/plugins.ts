@@ -1,45 +1,45 @@
 // // export default () => ({});
 
-// module.exports = ({ env }) => ({
-//   // ...
-//   email: {
-//     config: {
-//       provider: "nodemailer",
-//       providerOptions: {
-//         host: env("SMTP_HOST", "smtp.example.com"),
-//         port: env("SMTP_PORT", 587),
-//         auth: {
-//           user: env("SMTP_USERNAME"),
-//           pass: env("SMTP_PASSWORD"),
-//         },
-//         secure: false,
-//         // ... any custom nodemailer options
-//       },
-//       settings: {
-//         defaultFrom: "deepak.anurag@rhombuz.io",
-//         defaultReplyTo: "deepak.anurag@rhombuz.io",
-//       },
-//     },
-//   },
-//   // ...
-// });
-
-export default ({ env }) => ({
-  provider: "nodemailer",
-  providerOptions: {
-    host: env("SMTP_HOST"),
-    port: env.int("SMTP_PORT", 587),
-    secure: true,
-    auth: {
-      user: env("SMTP_USERNAME"),
-      pass: env("SMTP_PASSWORD"),
+module.exports = ({ env }) => ({
+  // ...
+  email: {
+    config: {
+      provider: "nodemailer",
+      providerOptions: {
+        host: env("SMTP_HOST", "smtp.example.com"),
+        port: env("SMTP_PORT", 587),
+        auth: {
+          user: env("SMTP_USERNAME"),
+          pass: env("SMTP_PASSWORD"),
+        },
+        secure: false,
+        // ... any custom nodemailer options
+      },
+      settings: {
+        defaultFrom: "deepak.anurag@rhombuz.io",
+        defaultReplyTo: "deepak.anurag@rhombuz.io",
+      },
     },
   },
-  settings: {
-    defaultFrom: env("SMTP_FROM"),
-    defaultReplyTo: env("SMTP_REPLY_TO"),
-  },
+  // ...
 });
+
+// export default ({ env }) => ({
+//   provider: "nodemailer",
+//   providerOptions: {
+//     host: env("SMTP_HOST"),
+//     port: env.int("SMTP_PORT", 587),
+//     secure: true,
+//     auth: {
+//       user: env("SMTP_USERNAME"),
+//       pass: env("SMTP_PASSWORD"),
+//     },
+//   },
+//   settings: {
+//     defaultFrom: env("SMTP_FROM"),
+//     defaultReplyTo: env("SMTP_REPLY_TO"),
+//   },
+// });
 
 // module.exports = ({ env }) => ({
 //   email: {
